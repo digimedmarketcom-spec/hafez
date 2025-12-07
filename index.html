@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فال حافظ</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #0f172a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 14px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        button {
+            background: #f59e0b;
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #fbbf24;
+        }
+
+        #falBox {
+            margin-top: 20px;
+            padding: 20px;
+            background: #334155;
+            border-radius: 10px;
+            display: none;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>فال حافظ</h1>
+    <p>روی دکمه زیر کلیک کنید تا یک فال تصادفی از حافظ دریافت کنید.</p>
+
+    <button onclick="getFal()">دریافت فال حافظ</button>
+
+    <div id="falBox"></div>
+</div>
+
+<script>
+    const falList = [
+        `بر سر آنم که گر ز دست برآید
+        دست به کاری زنم که غصه سر آید`,
+
+        `ای دل غلام شاه جهان باش و شاد باش
+        پيوسته در حمایت لطف ایزد باش`,
+
+        `هرگز نمیرد آنکه دلش زنده شد به عشق
+        ثبت است بر جریده عالم دوام ما`,
+
+        `در پس آینه طوطی صفتم داشته‌اند
+        آنچه استاد ازل گفت بگو می‌گویم`,
+
+        `صبر کن ای دل که حق سازد مراد
+        هر که او را آفرید او می‌پرورد`,
+
+        `به ناامیدی از این در مرو بزن فالی
+        بود که قرعه دولت به نام ما افتد`
+    ];
+
+    function getFal() {
+        const falBox = document.getElementById("falBox");
+        const randomFal = falList[Math.floor(Math.random() * falList.length)];
+
+        falBox.style.display = "block";
+        falBox.textContent = randomFal;
+    }
+</script>
+
+</body>
+</html>
